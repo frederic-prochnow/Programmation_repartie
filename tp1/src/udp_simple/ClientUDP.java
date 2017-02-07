@@ -10,7 +10,7 @@ public class ClientUDP {
 	        aSocket = new DatagramSocket();
 	        String string = "res";
 	        byte [] m = string.getBytes();
-	        InetAddress aHost = InetAddress.getByName("localhost");
+	        InetAddress aHost = InetAddress.getByName("localhost"); // @ destination
 	        int serverPort = 9876;
 	        DatagramPacket request = new DatagramPacket(m, m.length, aHost, serverPort);
 	        aSocket.send(request);
