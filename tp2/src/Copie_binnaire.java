@@ -13,8 +13,13 @@ public class Copie_binnaire {
 		desc = new File(args[1]);
 		
 		if(src.exists() && !desc.exists()){
-			InputStream inputStream = new InputStream(src);
-			OutputStream outputStream = new OutputStream(desc);
+			try {
+				InputStream inputStream = new FileInputStream(src);
+				OutputStream outputStream = new FileOutputStream(desc);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+				//YOLO! Problem
+			}
 		}
 		
 	}
