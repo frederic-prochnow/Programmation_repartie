@@ -1,24 +1,19 @@
 package service_de_begaiement;
-
+/**
+ * @author Frederic PROCHNOW
+ */
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
 public class ClientUDPbegaiement {
-
-	public static void main(String args[]) {
-		System.out.println("Client...\n");
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Quel est votre niveau de begaiement (entre 0 et 9)?");
-		String niveaubegai = sc.nextLine();
-		System.out.println("Quel est votre message ?");
-		String messagebegai = sc.nextLine();
-		sc.close();
+	
+	ClientUDPbegaiement(String string){
 		DatagramSocket aSocket = null;
 		try {
 			// ENVOIE DES DONNES AU SERVEUR
 			aSocket = new DatagramSocket();
-			String string = niveaubegai + messagebegai;
+			//concatenation des arguments en une phrase pour traitement serveur
 			byte[] m = string.getBytes();
 			InetAddress aHost = InetAddress.getByName("localhost"); // @
 																	// destination
@@ -30,7 +25,7 @@ public class ClientUDPbegaiement {
 			byte[] buffer = new byte[1000];
 			DatagramPacket reply = new DatagramPacket(buffer, buffer.length);
 			aSocket.receive(reply);
-			System.out.println("Reply: " + new String(reply.getData(), 0, reply.getLength()));
+			System.out.println("Reponse du serveur: \n" + new String(reply.getData(), 0, reply.getLength()));
 
 		} catch (SocketException e) {
 			System.out.println("Socket: " + e.getMessage());
@@ -39,6 +34,39 @@ public class ClientUDPbegaiement {
 		} finally {
 			if (aSocket != null)
 				aSocket.close();
+		}	
+	}
+	
+	public static void client(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Pour acceder au mode simplifié taper 's', sinon taper 'n' :");
+		String choix = sc.nextLine();
+		char c;
+		try{
+			c = choix.charAt(0);
+		}catch(StringIndexOutOfBoundsException e){
+			c = 'n';
 		}
+		if(c=='s'||c=='S'){
+			System.out.println("Quel est votre niveau de begaiement ?");
+			String niveaubegai = sc.nextLine();
+			System.out.println("Quel est votre message ?");
+			String messagebegai = sc.nextLine();
+			String string = niveaubegai + ":" + messagebegai;
+			new ClientUDPbegaiement(string);
+			System.out.println();
+		} else{
+			System.out.println("Ecrivez votre message au format \"nbrepetition:message\"");
+			System.out.println("Quel est votre message ?");
+			String messagebegai = sc.nextLine();
+			new ClientUDPbegaiement(messagebegai);
+		}
+		sc.close();
+	}
+	
+	public static void main(String args[]) {
+		System.out.println("_____CLIENT UDP_____");
+		System.out.println("_SERVICE BEGAIEMENT_\n");
+		client();
 	}
 }

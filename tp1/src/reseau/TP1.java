@@ -1,5 +1,7 @@
 package reseau;
-import java.awt.datatransfer.StringSelection;
+/**
+ * @author Frederic PROCHNOW
+ */
 import java.net.*;
 import java.util.Collections;
 import java.util.Enumeration;

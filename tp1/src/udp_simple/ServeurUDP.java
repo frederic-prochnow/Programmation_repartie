@@ -1,4 +1,7 @@
 package udp_simple;
+/**
+ * @author Frederic PROCHNOW
+ */
 import java . io . IOException ;
 import java . net . DatagramPacket ;
 import java . net . DatagramSocket ;
@@ -16,7 +19,7 @@ public class ServeurUDP {
 		String str ;
 		while(true){
 			dgSocket.receive(dgPacket);
-			System.out.println("Datagram received from " + dgPacket.getSocketAddress());
+			System.out.println("Datagramme recu de " + dgPacket.getSocketAddress());
 			dgPacket.setSocketAddress(dgPacket.getSocketAddress());
 			str = new java.util.Date().toString() + "\n";
 			byte[] bufDate = str.getBytes();
@@ -26,6 +29,7 @@ public class ServeurUDP {
 	}
 
 	public static void main (String[] args) throws IOException {
+		System.out.println("_____SERVEUR UDP_____\n");
 		final int DEFAULT_PORT = 9876 ;
 		new ServeurUDP(args.length == 0 ? DEFAULT_PORT : Integer.parseInt(args[0])).go();
 	}
