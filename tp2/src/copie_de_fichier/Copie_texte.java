@@ -1,4 +1,7 @@
 package copie_de_fichier;
+/**
+ * @author Frederic PROCHNOW
+ */
 import java.io.*;
 
 public class Copie_texte {
