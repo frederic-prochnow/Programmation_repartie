@@ -1,0 +1,17 @@
+{
+  "name": "to_do",
+  "version": "1.0.0",
+  "description": "Todo list en REST",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yvan Peter",
+  "license": "ISC",
+  "dependencies": {
+    "accepts": "^1.3.1",
+    "hapi": "^13.0.0",
+    "js2xmlparser": "^1.0.0",
+    "lokijs": "^1.3.11"
+  }
+}
