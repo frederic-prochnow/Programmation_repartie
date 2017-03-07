@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="fr.ulille.iut.UserResourceTest" time="2.21" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="fr.ulille.iut.MyResourceTest" time="0.145" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-8-oracle-x64/jre/lib/amd64"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/infoetu/prochnof/semestre4/prog-rep/tp3/first-rest-app"/>
+    <property name="user.dir" value="/home/infoetu/prochnof/semestre4/prog-rep/tp3/my_rest_app"/>
     <property name="java.runtime.version" value="1.8.0_71-b15"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/jdk-8-oracle-x64/jre/lib/endorsed"/>
@@ -58,16 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testModifyInexistantUser" time="1.293"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testModifyUser" time="0.122"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testCreateUserFromForm" time="0.102"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetUserAsXml" time="0.103"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testCreateUser" time="0.07"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testCreateSameUser" time="0.084"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetEmptyListofUsers" time="0.064"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetTwoUsers" time="0.074"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetOneUser" time="0.068"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetInexistantUser" time="0.073"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testDeleteOneUser" time="0.056"/>
-  <testcase classname="fr.ulille.iut.UserResourceTest" name="testDeleteInexistantUser" time="0.053"/>
+  <testcase classname="fr.ulille.iut.MyResourceTest" name="testGetIt" time="0.144"/>
 </testsuite>

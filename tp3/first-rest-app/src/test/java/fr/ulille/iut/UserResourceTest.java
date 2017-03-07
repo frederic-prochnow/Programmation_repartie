@@ -7,6 +7,8 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Form;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 
@@ -201,6 +203,36 @@ public class UserResourceTest {
      User retrieved = target.path("/users").path("epeel").request().get(User.class);
      assertEquals(modified, retrieved);
    }
+   
+   /**
+   *
+   * Vérifie la prise en charge de l'encodage application/x-www-form-urlencoded
+   */
+  @Test
+  public void testCreateUserFromForm() {
+    Form form = new Form();
+    form.param("login", "tking");
+    form.param("name", "King");
+    form.param("mail", "tking@mi5.uk");
+
+    Entity<Form> formEntity = Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE);
+    int code = target.path("/users").request().post(formEntity).getStatus();
+
+    assertEquals(201, code);
+  }
+  
+  /**
+   * Vérifie qu'on récupère bien un utilisateur avec le type MIME application/xml
+   */
+ @Test
+  public void testGetUserAsXml() {
+    User user = new User("epeel", "Peel", "epeel@mi5.uk");
+    Entity<User> userEntity = Entity.entity(user, MediaType.APPLICATION_JSON);
+    target.path("/users").request().post(userEntity);
+
+    int code = target.path("/users").path("epeel").request(MediaType.APPLICATION_XML).get().getStatus();
+    assertEquals(200, code);
+  }
     
 }
 
