@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="fr.ulille.iut.MyResourceTest" time="0.046" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="fr.ulille.iut.UserResourceTest" time="2.121" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-8-oracle-x64/jre/lib/amd64"/>
@@ -58,5 +58,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="fr.ulille.iut.MyResourceTest" name="testGetIt" time="0.041"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testCreateUser" time="1.345"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testCreateSameUser" time="0.103"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetEmptyListofUsers" time="0.131"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetTwoUsers" time="0.096"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetOneUser" time="0.077"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testGetInexistantUser" time="0.069"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testDeleteOneUser" time="0.079"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testDeleteInexistantUser" time="0.063"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testModifyInexistantUser" time="0.054"/>
+  <testcase classname="fr.ulille.iut.UserResourceTest" name="testModifyUser" time="0.063"/>
 </testsuite>
